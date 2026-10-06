@@ -30,21 +30,29 @@ main{width:min(1100px,calc(100% - 28px));margin:-38px auto 50px}.card{background
    Catégories acceptées : "R1-R2" ou "R3"
    ============================================================= */
 const joueurs = [
-  { nom: "Franck Bzymek",       categorie: "R1-R2", points: 200 + 140 + 110 },
-  { nom: "Christelle Antoine", categorie: "R1-R2", points: 175 + 130 + 100 },
-  { nom: "Patrick Coignet",    categorie: "R1-R2", points: 160 + 120 + 90 },
-  { nom: "Vincent Sieradz",    categorie: "R1-R2", points: 150 + 110 + 80 },
-  { nom: "Luke Bzymek",        categorie: "R1-R2", points: 145 + 100 + 70 },
-  { nom: "Jules Bzymek",       categorie: "R1-R2", points: 140 + 90 + 60 },
-  { nom: "Ricardo Fonseca",    categorie: "R1-R2", points: 120 + 80 + 50 },
-  { nom: "Tarik Attilah",      categorie: "R1-R2", points: 110 + 70 + 40 },
-  { nom: "Antonin De Sousa",   categorie: "R1-R2", points: 100 + 60 + 30 },
-  { nom: "Pascale Coignet",    categorie: "R1-R2", points: 90 + 50 + 30 },
-  { nom: "Romain Froment",     categorie: "R3",    points: 110 + 100 + 90 },
-  { nom: "Alexandre Rauner",   categorie: "R3",    points: 100 + 90 + 80 },
-  { nom: "Elvio Formica",      categorie: "R3",    points: 90 + 80 + 70 },
-  { nom: "Khalil Jreige",      categorie: "R3",    points: 80 + 70 + 60 },
-  { nom: "Norberto Pimentel",  categorie: "R3",    points: 70 + 60 + 50 }
+  { nom: "Achraf El Ammoury",       categorie: "R1-R2", points: 0 +0 },
+  { nom: "Mathieu Marchal",       categorie: "R1-R2", points: 0 + 0 },
+  { nom: "Martin Andres",       categorie: "R1-R2", points: 0 + 0 },
+  { nom: "Patrick Coignet",       categorie: "R1-R2", points: 0 + 0 },
+  { nom: "Joel Marchal",       categorie: "R1-R2", points: 0 + 0 },
+  { nom: "Thierry Genin",       categorie: "R1-R2", points: 0 + 0 },
+  { nom: "Gregory Bousset",       categorie: "R1-R2", points: 0 + 0 },
+  { nom: "Ricardo Fonseca",    categorie: "R1-R2", points: 0 + 0 },
+  { nom: "Younes Mesnour",    categorie: "R1-R2", points: 0 + 0 },
+  { nom: "Patrick De Rosso",    categorie: "R1-R2", points: 0 + 0 },
+  { nom: "Christelle Antoine", categorie: "R3", points: 0 + 0 },
+  { nom: "Vincent Sieradz",    categorie: "R3", points: 0 + 0 },
+  { nom: "Franck Bzymek",        categorie: "R3", points: 0 + 0 },
+  { nom: "Luke Bzymek",        categorie: "R3", points: 0 + 0 },
+  { nom: "Jules Bzymek",       categorie: "R3", points: 0 + 0 },
+  { nom: "Tarik Attilah",      categorie: "R3", points: 0 + 0 },
+  { nom: "Antonin De Sousa",   categorie: "R3", points: 0 + 0 },
+  { nom: "Pascale Coignet",    categorie: "R3", points: 0 + 0 },
+  { nom: "Romain Froment",     categorie: "R3",    points: 0 + 0 },
+  { nom: "Alexandre Rauner",   categorie: "R3",    points: 0 + 0 },
+  { nom: "Elvio Formica",      categorie: "R3",    points: 0 + 0 },
+  { nom: "Khalil Jreige",      categorie: "R3",    points: 0 + 0 },
+  { nom: "Norberto Pimentel",  categorie: "R3",    points: 0 + 0 }
 ];
 
 const sorted=[...joueurs].sort((a,b)=>b.points-a.points||a.nom.localeCompare(b.nom,'fr'));
