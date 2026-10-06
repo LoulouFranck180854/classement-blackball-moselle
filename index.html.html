@@ -28,37 +28,50 @@ main{width:min(1100px,calc(100% - 28px));margin:-38px auto 50px}.card{background
    SEULE PARTIE À MODIFIER APRÈS UN TOURNOI
    Tu peux écrire les points sous forme d'addition : 200 + 140 + 110
    Catégories acceptées : "R1-R2" ou "R3"
+
+   PREMIER TOUR :
+   - laisse premierTour = true
+   - indique ts: 1, 2, 3 ou 4 pour les têtes de série choisies
+   - mets ts: 0 pour les autres joueurs
+
+   À PARTIR DU 2e TOUR :
+   - remplace true par false
+   - les 4 têtes de série de chaque catégorie seront calculées automatiquement selon les points
    ============================================================= */
+const premierTour = true;
+
 const joueurs = [
-  { nom: "Achraf El Ammoury",       categorie: "R1-R2", points: 0 +0 },
-  { nom: "Mathieu Marchal",       categorie: "R1-R2", points: 0 + 0 },
-  { nom: "Martin Andres",       categorie: "R1-R2", points: 0 + 0 },
-  { nom: "Patrick Coignet",       categorie: "R1-R2", points: 0 + 0 },
-  { nom: "Joel Marchal",       categorie: "R1-R2", points: 0 + 0 },
-  { nom: "Thierry Genin",       categorie: "R1-R2", points: 0 + 0 },
-  { nom: "Gregory Bousset",       categorie: "R1-R2", points: 0 + 0 },
-  { nom: "Ricardo Fonseca",    categorie: "R1-R2", points: 0 + 0 },
-  { nom: "Younes Mesnour",    categorie: "R1-R2", points: 0 + 0 },
-  { nom: "Patrick De Rosso",    categorie: "R1-R2", points: 0 + 0 },
-  { nom: "Christelle Antoine", categorie: "R3", points: 0 + 0 },
-  { nom: "Vincent Sieradz",    categorie: "R3", points: 0 + 0 },
-  { nom: "Franck Bzymek",        categorie: "R3", points: 0 + 0 },
-  { nom: "Luke Bzymek",        categorie: "R3", points: 0 + 0 },
-  { nom: "Jules Bzymek",       categorie: "R3", points: 0 + 0 },
-  { nom: "Tarik Attilah",      categorie: "R3", points: 0 + 0 },
-  { nom: "Antonin De Sousa",   categorie: "R3", points: 0 + 0 },
-  { nom: "Pascale Coignet",    categorie: "R3", points: 0 + 0 },
-  { nom: "Romain Froment",     categorie: "R3",    points: 0 + 0 },
-  { nom: "Alexandre Rauner",   categorie: "R3",    points: 0 + 0 },
-  { nom: "Elvio Formica",      categorie: "R3",    points: 0 + 0 },
-  { nom: "Khalil Jreige",      categorie: "R3",    points: 0 + 0 },
-  { nom: "Norberto Pimentel",  categorie: "R3",    points: 0 + 0 }
+  { nom: "Achraf El Ammoury",       categorie: "R1-R2", points: 0 +0 , ts: 1},
+  { nom: "Mathieu Marchal",       categorie: "R1-R2", points: 0 + 0 , ts: 2},
+  { nom: "Martin Andres",       categorie: "R1-R2", points: 0 + 0 , ts: 3},
+  { nom: "Patrick Coignet",       categorie: "R1-R2", points: 0 + 0 , ts: 4},
+  { nom: "Joel Marchal",       categorie: "R1-R2", points: 0 + 0 , ts: 0},
+  { nom: "Thierry Genin",       categorie: "R1-R2", points: 0 + 0 , ts: 0},
+  { nom: "Gregory Bousset",       categorie: "R1-R2", points: 0 + 0 , ts: 0},
+  { nom: "Ricardo Fonseca",    categorie: "R1-R2", points: 0 + 0 , ts: 0},
+  { nom: "Younes Mesnour",    categorie: "R1-R2", points: 0 + 0 , ts: 0},
+  { nom: "Patrick De Rosso",    categorie: "R1-R2", points: 0 + 0 , ts: 0},
+  { nom: "Christelle Antoine", categorie: "R3", points: 0 + 0 , ts: 3},
+  { nom: "Vincent Sieradz",    categorie: "R3", points: 0 + 0 , ts: 0},
+  { nom: "Philippe Tiefenthal",        categorie: "R3", points: 0 + 0 , ts: 2},
+  { nom: "Alain Laurier",        categorie: "R3", points: 0 + 0 , ts: 4},
+  { nom: "Franck Bzymek",        categorie: "R3", points: 0 + 0 , ts: 1},
+  { nom: "Luke Bzymek",        categorie: "R3", points: 0 + 0 , ts: 0},
+  { nom: "Jules Bzymek",       categorie: "R3", points: 0 + 0 , ts: 0},
+  { nom: "Tarik Attilah",      categorie: "R3", points: 0 + 0 , ts: 0},
+  { nom: "Antonin De Sousa",   categorie: "R3", points: 0 + 0 , ts: 0},
+  { nom: "Pascale Coignet",    categorie: "R3", points: 0 + 0 , ts: 0},
+  { nom: "Romain Froment",     categorie: "R3",    points: 0 + 0 , ts: 0},
+  { nom: "Alexandre Rauner",   categorie: "R3",    points: 0 + 0 , ts: 0},
+  { nom: "Elvio Formica",      categorie: "R3",    points: 0 + 0 , ts: 0},
+  { nom: "Khalil Jreige",      categorie: "R3",    points: 0 + 0 , ts: 0},
+  { nom: "Norberto Pimentel",  categorie: "R3",    points: 0 + 0 , ts: 0}
 ];
 
 const sorted=[...joueurs].sort((a,b)=>b.points-a.points||a.nom.localeCompare(b.nom,'fr'));
 const esc=s=>s.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[c]));
 document.getElementById('general').innerHTML=sorted.map((j,i)=>`<tr><td class="rank">${i+1}</td><td><strong>${esc(j.nom)}</strong></td><td><span class="cat">${j.categorie}</span></td><td class="points">${j.points}</td></tr>`).join('');
-function category(id,name){const arr=sorted.filter(j=>j.categorie===name);document.getElementById(id).innerHTML=arr.length?arr.map((j,i)=>`<tr><td class="rank">${i+1}</td><td><strong>${esc(j.nom)}</strong></td><td class="points">${j.points}</td><td>${i<4?`<span class="seed">TS${i+1}</span>`:''}</td></tr>`).join(''):`<tr><td colspan="4" class="empty">Aucun joueur</td></tr>`}
+function category(id,name){const arr=sorted.filter(j=>j.categorie===name);document.getElementById(id).innerHTML=arr.length?arr.map((j,i)=>{const numeroTS=premierTour?(j.ts>=1&&j.ts<=4?j.ts:null):(i<4?i+1:null);return `<tr><td class="rank">${i+1}</td><td><strong>${esc(j.nom)}</strong></td><td class="points">${j.points}</td><td>${numeroTS?`<span class="seed">TS${numeroTS}</span>`:''}</td></tr>`}).join(''):`<tr><td colspan="4" class="empty">Aucun joueur</td></tr>`}
 category('r12','R1-R2');category('r3','R3');
 </script>
 </body></html>
