@@ -54,6 +54,8 @@ main{width:min(1100px,calc(100% - 28px));margin:-38px auto 50px}.card{background
    SEULE PARTIE À MODIFIER APRÈS UN TOURNOI
    Tu peux écrire les points sous forme d'addition : 200 + 140 + 110
    Catégories acceptées : "R1-R2" ou "R3"
+   visible: true = joueur affiché ; visible: false = joueur masqué
+   Le joueur masqué reste enregistré avec tous ses points.
 
    PREMIER TOUR :
    - laisse premierTour = true
@@ -72,48 +74,50 @@ main{width:min(1100px,calc(100% - 28px));margin:-38px auto 50px}.card{background
 // INFORMATIONS À MODIFIER FACILEMENT POUR CHAQUE RANKING
 // Dates au format JJ/MM/AAAA. Remplacer les liens lors du prochain ranking.
 // ================================================================
-const dateMiseAJour = "";
+const dateMiseAJour = "29/10/2026";
 const tournois = {
   R12: {
-    date: "25/10/2026",
-    lien: "https://cuescore.com/tournament/Blackball+-+Chpt+Moselle+R1-R2+-+Ranking+1%252F6/91044136"
+    date: "28/11/2026",
+    lien: "https://cuescore.com/tournament/Blackball+-+Chpt+Moselle+R1-R2+-+Ranking+2%252F6/91044955"
   },
   R3: {
-    date: "24/10/2026",
-    lien: "https://cuescore.com/tournament/Blackball+-+Chpt+Moselle+R3+-+Ranking+1%252F6/91037620"
+    date: "29/11/2026",
+    lien: "https://cuescore.com/tournament/Blackball+-+Chpt+Moselle+R3+-+Ranking+2%252F6/91008883"
   }
 };
 const prochainRankingR12 = tournois.R12.date;
 const prochainRankingR3 = tournois.R3.date;
 
-const premierTour = true;
+const premierTour = false;
 
 const joueurs = [
-  { nom: "Achraf El Ammoury",       categorie: "R3", points: 0 +0 , ts: 0},
-  { nom: "Mathieu Marchal",       categorie: "R1-R2", points: 0 + 0 , ts: 1},
-  { nom: "Martin Andres",       categorie: "R1-R2", points: 0 + 0 , ts: 2},
-  { nom: "Patrick Coignet",       categorie: "R1-R2", points: 0 + 0 , ts: 3},
-  { nom: "Joel Marchal",       categorie: "R1-R2", points: 0 + 0 , ts: 4},
-  { nom: "Thierry Genin",       categorie: "R1-R2", points: 0 + 0 , ts: 0},
-  { nom: "Gregory Bousset",       categorie: "R3", points: 0 + 0 , ts: 0},
-  { nom: "Ricardo Fonseca",    categorie: "R3", points: 0 + 0 , ts: 0},
-  { nom: "Younes Mesnour",    categorie: "R1-R2", points: 0 + 0 , ts: 0},
-  { nom: "Patrick De Rosso",    categorie: "R1-R2", points: 0 + 0 , ts: 0},
-  { nom: "Christelle Antoine", categorie: "R1-R2", points: 0 + 0 , ts: 0},
-  { nom: "Vincent Sieradz",    categorie: "R3", points: 0 + 0 , ts: 0},
-  { nom: "Franck Bzymek",        categorie: "R1-R2", points: 0 + 0 , ts: 0},
-  { nom: "Philippe Tiefenthal",        categorie: "R1-R2", points: 0 + 0 , ts: 0},
-  { nom: "Alain Laurier",        categorie: "R3", points: 0 + 0 , ts: 0},
-  { nom: "Luke Bzymek",        categorie: "R3", points: 0 + 0 , ts: 0},
-  { nom: "Jules Bzymek",       categorie: "R3", points: 0 + 0 , ts: 0},
-  { nom: "Tarik Attilah",      categorie: "R3", points: 0 + 0 , ts: 0},
-  { nom: "Antonin De Sousa",   categorie: "R3", points: 0 + 0 , ts: 0},
-  { nom: "Pascale Coignet",    categorie: "R3", points: 0 + 0 , ts: 0},
-  { nom: "Romain Froment",     categorie: "R3",    points: 0 + 0 , ts: 0},
-  { nom: "Alexandre Rauner",   categorie: "R3",    points: 0 + 0 , ts: 0},
-  { nom: "Elvio Formica",      categorie: "R3",    points: 0 + 0 , ts: 0},
-  { nom: "Khalil Jreige",      categorie: "R3",    points: 0 + 0 , ts: 0},
-  { nom: "Norberto Pimentel",  categorie: "R3",    points: 0 + 0 , ts: 0}
+  { nom: "Mathieu Marchal",       categorie: "R1-R2", points: 200 + 0 , ts: 1, visible: true},
+  { nom: "Martin Andres",       categorie: "R1-R2", points: 175 + 0 , ts: 2, visible: true},
+  { nom: "Younes Mesnour",    categorie: "R1-R2", points: 160 + 0 , ts: 3, visible: true},
+  { nom: "Thierry Genin",       categorie: "R1-R2", points: 150 + 0 , ts: 4, visible: true},
+  { nom: "Joel Marchal",       categorie: "R1-R2", points: 140 + 0 , ts: 0, visible: true},
+  { nom: "Patrick De Rosso",    categorie: "R1-R2", points: 140 + 0 , ts: 0, visible: true},
+  { nom: "Patrick Coignet",       categorie: "R1-R2", points: 130 + 0 , ts: 0, visible: true},
+  { nom: "Vincent Sieradz",    categorie: "R1-R2", points: 120 + 0 , ts: 0, visible: true},
+  { nom: "Régis Albacete",      categorie: "R1-R2",    points: 110 + 0 , ts: 0, visible: true},
+  { nom: "Matthew Crosse",      categorie: "R1-R2",    points: 100 + 0 , ts: 0, visible: true},
+  { nom: "Franck Bzymek",        categorie: "R3", points: 120 + 0 , ts: 1, visible: true},
+  { nom: "Christelle Antoine", categorie: "R3", points: 100 + 0 , ts: 2, visible: true},
+  { nom: "Philippe Tiefenthal",        categorie: "R3", points: 100 + 0 , ts: 3, visible: true},
+  { nom: "Alexandre Rauner",   categorie: "R3",    points: 90 + 0 , ts: 4, visible: true},
+  { nom: "Luke Bzymek",        categorie: "R3", points: 80 + 0 , ts: 0, visible: true},
+  { nom: "Jules Bzymek",       categorie: "R3", points: 80 + 0 , ts: 0, visible: true},
+  { nom: "Gregory Bousset",       categorie: "R3", points: 0 + 0 , ts: 0, visible: false},
+  { nom: "Ricardo Fonseca",    categorie: "R3", points: 0 + 0 , ts: 0, visible: false},
+  { nom: "Alain Laurier",        categorie: "R3", points: 0 + 0 , ts: 0, visible: false},
+  { nom: "Tarik Attilah",      categorie: "R3", points: 0 + 0 , ts: 0, visible: false},
+  { nom: "Antonin De Sousa",   categorie: "R3", points: 0 + 0 , ts: 0, visible: false},
+  { nom: "Pascale Coignet",    categorie: "R3", points: 0 + 0 , ts: 0, visible: false},
+  { nom: "Romain Froment",     categorie: "R3",    points: 0 + 0 , ts: 0, visible: false},
+  { nom: "Elvio Formica",      categorie: "R3",    points: 0 + 0 , ts: 0, visible: false},
+  { nom: "Khalil Jreige",      categorie: "R3",    points: 0 + 0 , ts: 0, visible: false},
+  { nom: "Achraf El Ammoury",       categorie: "R3", points: 0 +0 , ts: 0, visible: false},
+  { nom: "Norberto Pimentel",  categorie: "R3",    points: 0 + 0 , ts: 0, visible: false}
 ];
 
 // Cartes cliquables des deux tournois. Pas de lien brut visible.
@@ -136,7 +140,8 @@ document.getElementById('dateMaj').textContent = dateMiseAJour || 'Non renseign�
 document.getElementById('dateR12').textContent = prochainRankingR12 || 'À confirmer';
 document.getElementById('dateR3').textContent = prochainRankingR3 || 'À confirmer';
 
-const sorted=[...joueurs].sort((a,b)=>b.points-a.points||a.nom.localeCompare(b.nom,'fr'));
+const joueursVisibles=joueurs.filter(j=>j.visible!==false);
+const sorted=[...joueursVisibles].sort((a,b)=>b.points-a.points||a.nom.localeCompare(b.nom,'fr'));
 const esc=s=>s.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[c]));
 
 if(premierTour){
@@ -148,7 +153,7 @@ if(premierTour){
   document.getElementById('subtitle').textContent='1er tour • R1-R2 & têtes de série';
 
   function seeds(id,name){
-    const arr=joueurs.filter(j=>j.categorie===name && j.ts>=1 && j.ts<=4).sort((a,b)=>a.ts-b.ts);
+    const arr=joueursVisibles.filter(j=>j.categorie===name && j.ts>=1 && j.ts<=4).sort((a,b)=>a.ts-b.ts);
     document.getElementById(id).innerHTML=arr.length?arr.map(j=>`<tr><td><span class="seed">TS${j.ts}</span></td><td><strong>${esc(j.nom)}</strong></td></tr>`).join(''):`<tr><td colspan="2" class="empty">Aucune tête de série définie</td></tr>`;
   }
   seeds('seedsR12','R1-R2');
